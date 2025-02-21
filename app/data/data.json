@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Product One",
+      "description": "This is product one.",
+      "price": "$10"
+    },
+    {
+      "id": "2",
+      "name": "Product Two",
+      "description": "This is product two.",
+      "price": "$20"
+    }
+  ],
+  "company": {
+    "name": "To The New",
+    "description": "We provide the best products in the market."
+  },
+  "employees": [
+    {
+      "id": "8171",
+      "name": "Shivam Chauhan",
+      "role": "Software Developer Trainee"
+    },
+    {
+      "id": "5991",
+      "name": "Abhinav Singh",
+      "role": "Senior Software Engineer"
+    }
+  ]
+}
