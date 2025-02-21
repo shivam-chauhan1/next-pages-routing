@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import data from "@/app/data/data.json";
 
 type EmployeeDetailProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export default function EmployeeDetail({ params }: EmployeeDetailProps) {
-  const employee = data.employees.find((e) => e.id === params.id);
+export default async function EmployeeDetail({ params }: EmployeeDetailProps) {
+  const id = (await params).id;
+  const employee = data.employees.find((e) => e.id === id);
   if (!employee) return notFound();
 
   return (

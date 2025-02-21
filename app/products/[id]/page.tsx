@@ -2,13 +2,14 @@ import { notFound } from "next/navigation";
 import data from "@/app/data/data.json";
 
 type ProductDetailProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export default function ProductDetail({ params }: ProductDetailProps) {
-  const product = data.products.find((p) => p.id === params.id);
+export default async function ProductDetail({ params }: ProductDetailProps) {
+  const id = (await params).id;
+  const product = data.products.find((p) => p.id === id);
   if (!product) return notFound();
 
   return (
