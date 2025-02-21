@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
 import data from "@/app/data/data.json";
 
-export default function EmployeeDetail({ params }: { params: { id: string } }) {
+type EmployeeDetailProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default function EmployeeDetail({ params }: EmployeeDetailProps) {
   const employee = data.employees.find((e) => e.id === params.id);
   if (!employee) return notFound();
 
